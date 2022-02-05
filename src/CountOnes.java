@@ -6,13 +6,15 @@ public class CountOnes {
         int[][] inputArray = { {1, 0, 1, 1, 0}, {0, 1, 1, 1, 0}, {1, 0, 1, 0, 1}, {1, 1, 0, 0, 1}, {0, 0, 1, 1, 0} };
         int[][] outputArray = new int[5][5];
 
-        int arrayLength = inputArray.length;
+        int arrayLength = inputArray.length * inputArray.length;
         int runningTotal = 0;
+        int x = 0, y = 0;
         for (int i = 0; i < arrayLength; i++) {
-            for(int j = 0; j < arrayLength; j++) {
-                outputArray[i][j] = solve(inputArray, i, j, j, runningTotal);
-            }
+            outputArray[x][y] = solve(inputArray, x, y, y, runningTotal);
+            y++;
+            if(y == 5) { x++; y = 0; }
         }
+
         for (int[] array : outputArray) {
             System.out.println(Arrays.toString(array));
         }
