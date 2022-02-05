@@ -6,9 +6,7 @@ public class CountOnes {
         int[][] inputArray = { {1, 0, 1, 1, 0}, {0, 1, 1, 1, 0}, {1, 0, 1, 0, 1}, {1, 1, 0, 0, 1}, {0, 0, 1, 1, 0} };
         int[][] outputArray = new int[5][5];
 
-        int arrayLength = inputArray.length * inputArray.length;
-        int runningTotal = 0;
-        int x = 0, y = 0;
+        int arrayLength = inputArray.length * inputArray.length, runningTotal = 0, x = 0, y = 0;
         for (int i = 0; i < arrayLength; i++) {
             outputArray[x][y] = solve(inputArray, x, y, y, runningTotal);
             y++;
